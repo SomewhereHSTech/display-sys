@@ -1,0 +1,22 @@
+.text_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.screen_text {
+    color: white;
+    z-index: 2;
+    -webkit-text-stroke: 2px black;
+    --font_size: 24;
+    font-weight: bold;
+    font-size: calc(var(--screem_width) / var(--font_size) );
+    top: calc((var(--screem_width) * 9 / 16 ) / 2 - (var(--screem_width) /var(--font_size)));
+    opacity: 1;
+    position: absolute;
+}
+
+.screen_text_hide {
+    opacity: 0;
+}

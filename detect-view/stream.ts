@@ -15,8 +15,6 @@ import {send} from "./util/WebSocket.js";
     let canvas : HTMLCanvasElement;
     let streaming : boolean = false;
 
-    let createdBoxes : Map<String,CreatedBox>;
-
 
     function setElements(): void {
         rectangeSelect_init();
@@ -42,7 +40,7 @@ import {send} from "./util/WebSocket.js";
                     canvas.setAttribute("width", String(video.videoWidth ));
                     canvas.setAttribute("height", String(video.videoHeight));
                     streaming = true;
-                    setInterval(take,1000);
+                    setInterval(take,250);
 
                 }
             },

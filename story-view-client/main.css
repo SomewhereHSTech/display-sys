@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: wheat;
+}
+#main_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*
+    余白を作るやつ
+    Thank you to: @Bitter_choco@misskey.systems
+*/
+
+@media (max-aspect-ratio: 1/1) {
+    @media (max-aspect-ratio: 9/16) {
+        #screen_wrapper {
+            width: 100vw;
+            --screem_width: calc(100vw * 16 /9);
+        }
+    }
+    @media (min-aspect-ratio: 9/16) {
+        #screen_wrapper {
+            height: 100vh;
+            --screem_width: 100vh;
+        }
+    }
+    #screen_wrapper {
+        aspect-ratio: 9/16;
+    }
+    #virtual_screen_wrapper {
+        transform: rotateZ(90deg);
+        width: calc((100% / 9 ) * 16);
+        height: calc((100% / 16) * 9);
+    }
+}
+@media (min-aspect-ratio: 1/1) {
+    @media (max-aspect-ratio: 16/9) {
+        #screen_wrapper {
+            width: 100vw;
+            --screem_width: 100vw;
+        }
+    }
+    @media (min-aspect-ratio: 16/9) {
+        #screen_wrapper {
+            height: 100vh;
+            --screem_width: calc(100vh* 16 / 9);
+        }
+    }
+    #screen_wrapper {
+        aspect-ratio: 16/9;
+    }
+    #virtual_screen_wrapper {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+#screen_wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-color: dimgray;
+    justify-content: center;
+}
+#virtual_screen_wrapper {
+    position: absolute;
+    overflow: hidden;
+}
+#background_picture{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}

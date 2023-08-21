@@ -23,6 +23,9 @@ export class CreatedBox{
 
     private selectedBox :HTMLDivElement;
 
+    private now_color : Color;
+    private last_lighterthan_result : boolean|null;
+
     showEditWindow(ev : MouseEvent){
         // @ts-ignore
         let edit_window: HTMLDivElement = document.getElementById("created_box_edit");
@@ -54,11 +57,15 @@ export class CreatedBox{
     }
 
 
-    getColor(){
+    getColor() : Color{
+        return this.now_color;
+    }
+
+    updateColor() : void {
         const context = this.canvas.getContext("2d");
         if (context == null) {return}
         let img: ImageData = context.getImageData(this.x, this.y, this.width, this.height);
-        return this.getImageAverage(img);
+        this.now_color = this.getImageAverage(img);
     }
 
     changeSendName(name :string){
@@ -70,16 +77,27 @@ export class CreatedBox{
         return  this.sendName;
     }
 
+    getLastLighterResult() : boolean|undefined{
+        if (this.last_lighterthan_result === null){
+            return undefined; // ごめん
+        } else {
+            return this.last_lighterthan_result;
+        }
+    }
+
     isLighterThanThreshold() :boolean{
         let color : any = this.getColor();
         if (color != undefined){
-            return  color.lighterThan(this.light_threshold);
+            let result : boolean = color.lighterThan(this.light_threshold);
+            this.last_lighterthan_result = result;
+            return result;
         } else  {
-            return true;//ごめん
+            return true;  // ごめん
         }
     }
 
     createThreshold_min() : void{
+        this.updateColor();
         let color : Color|undefined = this.getColor();
         if (color == undefined){
             alert("読み取りに失敗したので、うん。ごめん");
@@ -88,6 +106,7 @@ export class CreatedBox{
         }
     }
     createThreshold_max() : void{
+        this.updateColor();
         let color : Color|undefined = this.getColor();
         if (color == undefined){
             alert("読み取りに失敗したので、うん。ごめん");
@@ -103,6 +122,8 @@ export class CreatedBox{
         this.height = Math.max(y1,y2) - this.y;
         this.uniq_id = new Date().getTime().toString(16);
         this.selectedBox = this.createSelectedBox(this.uniq_id);
+        this.now_color = new Color(0,0,0);
+        this.last_lighterthan_result = null;
         console.log(this.uniq_id);
         add(this);
     }

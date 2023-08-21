@@ -27,7 +27,16 @@ export function changeSendName(ev :MouseEvent){
 export function takeAll() : Map<string,boolean>{
     result_map = new Map();
     list.forEach(function (value, key, map){
-        result_map.set(value.getSendName(),value.isLighterThanThreshold())
+        value.updateColor();
+        let last_result : boolean|undefined = value.getLastLighterResult();
+        if (last_result === undefined){
+            result_map.set(value.getSendName(), value.isLighterThanThreshold());
+            return;
+        }
+        let new_result : boolean = value.isLighterThanThreshold();
+        if (new_result != last_result) {
+            result_map.set(value.getSendName(), new_result);
+        }
     });
     console.log("take!")
     return result_map;
