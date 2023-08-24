@@ -2,7 +2,7 @@ import {StoryScript} from "./StoryScript.js";
 import {TextScript} from "./TextScript.js";
 import {FileManager} from "../FileManager.js";
 import {getBackgroundImage} from "../util/DomUtil.js";
-import {StoryScriptManager} from "../StoryScriptManager";
+import {StoryScriptManager} from "../StoryScriptManager.js";
 
 
 export class TextAndBackgroundScript extends TextScript implements StoryScript{
@@ -19,11 +19,11 @@ export class TextAndBackgroundScript extends TextScript implements StoryScript{
     appear(callback?: () => void) {
         let background :HTMLImageElement = getBackgroundImage();
         background.classList.add("image_disappear");
-        background.addEventListener("animationend",(ev)=>{
+        background.addEventListener("animationend",()=>{
             background.src = this.fileManager.get(this.picture_url);
             background.classList.remove("image_disappear");
             background.classList.add("image_appear");
-            background.addEventListener("animationend", (ev)=>{
+            background.addEventListener("animationend", ()=>{
                 background.classList.remove("image_appear");
                 super.appear(callback);
             }, {once: true})

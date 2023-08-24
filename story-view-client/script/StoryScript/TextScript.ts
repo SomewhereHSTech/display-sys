@@ -1,6 +1,6 @@
 import {StoryScript} from "./StoryScript.js";
 import {getTextWrapper, removeTextHide} from "../util/DomUtil.js";
-import {StoryScriptManager} from "../StoryScriptManager";
+import {StoryScriptManager} from "../StoryScriptManager.js";
 
 
 export class TextScript implements StoryScript{
@@ -53,7 +53,7 @@ export class TextScript implements StoryScript{
 
     appear(callback? :()=>void): void {
         removeTextHide(this.text_element)
-        document.body.addEventListener("click",(ev)=>{
+        document.body.addEventListener("click",()=>{
             this.appear_effect = false ;
         },{signal: this.EventController.signal, once: true});
         this.showText(0,callback);
@@ -61,7 +61,7 @@ export class TextScript implements StoryScript{
 
     disappear(callback? :()=>void): void {
         this.text_element.classList.add("disappear");
-        this.text_element.addEventListener("animationend",ev => {
+        this.text_element.addEventListener("animationend",() => {
             this.text_element.remove();
             if (callback !== undefined) callback();
         })

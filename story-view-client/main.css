@@ -10,8 +10,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
 }
 
 /*
@@ -22,14 +22,19 @@ body {
 @media (max-aspect-ratio: 1/1) {
     @media (max-aspect-ratio: 9/16) {
         #screen_wrapper {
-            width: 100vw;
-            --screem_width: calc(100vw * 16 /9);
+            width: 100dvw;
+        }
+        :root {
+            --screem_width: calc(100dvw * 16 /9);
         }
     }
     @media (min-aspect-ratio: 9/16) {
         #screen_wrapper {
-            height: 100vh;
-            --screem_width: 100vh;
+            height: 100dvh;
+        }
+
+        :root {
+            --screem_width: 100dvh;
         }
     }
     #screen_wrapper {
@@ -44,14 +49,18 @@ body {
 @media (min-aspect-ratio: 1/1) {
     @media (max-aspect-ratio: 16/9) {
         #screen_wrapper {
-            width: 100vw;
-            --screem_width: 100vw;
+            width: 100dvw;
+        }
+        :root {
+            --screem_width: 100dvw;
         }
     }
     @media (min-aspect-ratio: 16/9) {
         #screen_wrapper {
-            height: 100vh;
-            --screem_width: calc(100vh* 16 / 9);
+            height: 100dvh;
+        }
+        :root {
+            --screem_width: calc(100dvh* 16 / 9);
         }
     }
     #screen_wrapper {

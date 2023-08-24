@@ -1,6 +1,6 @@
 import {StoryScript} from "./StoryScript.js";
 import {getTextWrapper} from "../util/DomUtil.js";
-import {StoryScriptManager} from "../StoryScriptManager";
+import {StoryScriptManager} from "../StoryScriptManager.js";
 
 // TODO: いろいろ
 
