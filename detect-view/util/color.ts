@@ -13,6 +13,14 @@ export class Color {
         return  Math.max(this.r,this.g,this.b);
     }
 
+    getRGBString() : string {
+        return `(${Math.floor(this.r)},${Math.floor(this.g)},${Math.floor(this.b)})`
+    }
+
+    getHEXString() :string{
+        return `#${Math.floor(this.r).toString(16)}${Math.floor(this.g).toString(16)}${Math.floor(this.b).toString(16)}`
+    }
+
     lighterThan(color : Color|number) : boolean{
         if (color instanceof Color) {
             return (color.getBiggest() < this.getBiggest());

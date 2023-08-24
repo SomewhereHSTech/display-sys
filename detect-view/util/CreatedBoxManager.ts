@@ -12,7 +12,7 @@ export function add(box :CreatedBox){
     list.set(box.uniq_id,box);
 }
 
-export function changeSendName(ev :MouseEvent){
+export function changeSendName(){
     // @ts-ignore
     let box : CreatedBox = list.get(document.getElementById("element_name").value);
     console.log(box);
@@ -24,9 +24,20 @@ export function changeSendName(ev :MouseEvent){
     document.getElementById("created_box_edit").style.display = "none";
 }
 
+export function changeThresholdMax(){
+    // @ts-ignore
+    let box : CreatedBox = list.get(document.getElementById("element_name").value);
+    box.createThreshold_max();
+}
+export function changeThresholdMin() {
+    // @ts-ignore
+    let box : CreatedBox = list.get(document.getElementById("element_name").value);
+    box.createThreshold_min();
+}
+
 export function takeAll() : Map<string,boolean>{
     result_map = new Map();
-    list.forEach(function (value, key, map){
+    list.forEach(function (value){
         value.updateColor();
         let last_result : boolean|undefined = value.getLastLighterResult();
         if (last_result === undefined){
@@ -38,6 +49,5 @@ export function takeAll() : Map<string,boolean>{
             result_map.set(value.getSendName(), new_result);
         }
     });
-    console.log("take!")
     return result_map;
 }

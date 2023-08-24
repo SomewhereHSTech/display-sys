@@ -5,12 +5,12 @@ import {StoryScriptManager} from "../StoryScriptManager";
 
 export class TextScript implements StoryScript{
 
-    private text_element :HTMLDivElement;
-    private readonly uniq :string = new Date().getTime().toString(16) + Math.floor(Math.random()*1000);
-    private readonly text :string;
+    protected text_element :HTMLDivElement;
+    protected readonly uniq :string = new Date().getTime().toString(16) + Math.floor(Math.random()*1000);
+    protected readonly text :string;
     protected ScriptManager :StoryScriptManager;
-    private EventController :AbortController = new AbortController();
-    private appear_effect :boolean = true;
+    protected EventController :AbortController = new AbortController();
+    protected appear_effect :boolean = true;
 
     constructor(ScriptManager :StoryScriptManager, text :string) {
         this.text_element = document.createElement("div");

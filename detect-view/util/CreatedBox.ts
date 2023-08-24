@@ -18,6 +18,9 @@ export class CreatedBox{
 
     private light_threshold : number = 128;
 
+    private light_biggest_color : Color|undefined;
+    private light_smallest_color : Color|undefined;
+
     private light_biggest : number = 256;
     private light_smallest : number = 0;
 
@@ -27,8 +30,7 @@ export class CreatedBox{
     private last_lighterthan_result : boolean|null;
 
     showEditWindow(ev : MouseEvent){
-        // @ts-ignore
-        let edit_window: HTMLDivElement = document.getElementById("created_box_edit");
+        let edit_window: HTMLDialogElement = <HTMLDialogElement>document.getElementById("created_box_edit");
         edit_window.style.display = "block";
         edit_window.style.left = String(ev.pageX) + "px";
         edit_window.style.top = String(ev.pageY) + "px";
@@ -36,10 +38,15 @@ export class CreatedBox{
         // @ts-ignore
         let element_name_input: HTMLInputElement = document.getElementById("element_name");
         element_name_input.value = this.uniq_id;
-    }
-
-    showSelectedBox() :void {
-        console.log(this.uniq_id);
+        (<HTMLInputElement>document.getElementById("send_name_input")).value = this.sendName;
+        let threshold_biggest = this.light_biggest_color?.getHEXString();
+        let threshold_smallest = this.light_smallest_color?.getHEXString();
+        if (threshold_biggest !== undefined) {
+            (<HTMLInputElement>document.getElementById("created_box_threshold_biggest")).value = threshold_biggest;
+        }
+        if (threshold_smallest !== undefined) {
+            (<HTMLInputElement>document.getElementById("created_box_threshold_smallest")).value = threshold_smallest;
+        }
     }
 
     createSelectedBox(id : String) :HTMLDivElement{
@@ -62,7 +69,7 @@ export class CreatedBox{
     }
 
     updateColor() : void {
-        const context = this.canvas.getContext("2d");
+        const context = this.canvas.getContext("2d",{willReadFrequently:true});
         if (context == null) {return}
         let img: ImageData = context.getImageData(this.x, this.y, this.width, this.height);
         this.now_color = this.getImageAverage(img);
@@ -85,6 +92,11 @@ export class CreatedBox{
         }
     }
 
+    updateThreshold() :void {
+        this.light_threshold = (this.light_smallest + this.light_biggest) / 2;
+        // Chu! 雑実装でごめん
+    }
+
     isLighterThanThreshold() :boolean{
         let color : any = this.getColor();
         if (color != undefined){
@@ -103,6 +115,8 @@ export class CreatedBox{
             alert("読み取りに失敗したので、うん。ごめん");
         } else {
             this.light_smallest = color.getBiggest();
+            let label = <HTMLSpanElement>document.getElementById("created_box_threshold_smallest_label");
+            label.textContent = color.getHEXString();
         }
     }
     createThreshold_max() : void{
@@ -112,6 +126,8 @@ export class CreatedBox{
             alert("読み取りに失敗したので、うん。ごめん");
         } else {
             this.light_biggest = color.getBiggest();
+            let label = <HTMLSpanElement>document.getElementById("created_box_threshold_biggest_label");
+            label.textContent = color.getHEXString();
         }
     }
 

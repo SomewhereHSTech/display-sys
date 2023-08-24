@@ -4,6 +4,7 @@ export interface ScriptJsonData{
     type: string;
     text: string;
     url?: string;
+    character_name? :string
 }
 
 export interface ScriptsJsonData {

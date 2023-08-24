@@ -20,6 +20,9 @@ export function rectangeSelect_init() : void{
 }
 
 export function onMouseDown(ev :MouseEvent){
+    if (ev.button !== 0) {
+        return;
+    }
     start_x = ev.x
     start_y = ev.y
     isPushing = true;
@@ -39,6 +42,9 @@ export function onMouseMove(ev :MouseEvent){
     ctx.strokeRect(start_x,start_y,ev.x - start_x, ev.y -start_y)
 }
 export function onMouseUp(ev :MouseEvent){
+    if (ev.x == start_x || start_y == ev.y) {
+        return;
+    }
     new CreatedBox(ev.x,ev.y,start_x,start_y);
     let ctx :CanvasRenderingContext2D|null  = canvas.getContext("2d");
     if (ctx != null){ctx.clearRect(0,0,canvas.width,canvas.height);}

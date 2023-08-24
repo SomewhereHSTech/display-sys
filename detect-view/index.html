@@ -21,16 +21,21 @@
     <div id="selecting_box_cover"></div>
     <div id="created_box_wrap">
     </div>
-    <div id="created_box_edit">
+    <dialog id="created_box_edit">
         <label for="send_name_input">送信時名</label>
         <input name="send_box_name" id="element_name" type="hidden">
         <input name="send_name" id="send_name_input"><br>
         <input type="button" onclick="document.getElementById('created_box_edit').style.display = 'none'" class="created_edit_window_button" name="close" id="created_edit_close" value="close">
         <input type="button"  class="created_edit_window_button" name="confirm" id="created_edit_confirm" value="confirm"><br>
-        <input type="button" value="調整（明）" id="created_box_threshold_biggwat">
-        <input type="button" value="調整（暗）" id="created_box_threshold_smallest">
+        <label><input type="button" value="調整（明）" id="created_box_threshold_biggest"><span id="created_box_threshold_biggest_label"></span></label><br>
+        <label><input type="button" value="調整（暗）" id="created_box_threshold_smallest"><span id="created_box_threshold_smallest_label"></span></label>
+    </dialog>
 
-    </div>
+    <dialog id="general_setting_box">
+        <label>Websocket server IP address:<input id="setting_IP"></label><br>
+        <label>Websocket server Port:<input id="setting_PORT"></label>
+        <input type="button" value="confirm" id="setting_confirm">
+    </dialog>
     <!--<canvas style="" id="canvas2" width="500" height="500"></canvas>-->
 </div>
 </body>
