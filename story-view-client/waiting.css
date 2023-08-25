@@ -1,5 +1,7 @@
 
 #waiting_wrapper {
+    position: absolute;
+    top: 0;
 }
 
 #waiting_wrapper > * {
@@ -17,24 +19,20 @@
             0 -2px 1px #000000;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: calc(var(--screem_width) / var(--font_size) );
-    top: 0;
-    opacity: 1;
-    position: absolute;
 }
 
 :root {
     --time_font_size: 20;
-    --arrow_color: #58c1fa;
+    --info_title_font_size: 24;
+    --info_text_font_size: 32;
+    --arrow_color: #bfbfbf;
     --arrow_line_size: 10px;
 }
 #waiting_wrapper {
     padding: 0;
     margin: 0;
-    display: grid;
-    grid-template-areas:
-                "time time"
-                "way way";
-    background-color: gray;
+
+    height: calc(var(--screem_width) *9 /16);
 }
 
 #waiting_wrapper > * {
@@ -60,7 +58,7 @@
 #waiting_time_connect_arrow {
     position: absolute;
     right: 0;
-    --arrow_size: 20;
+    --arrow_size: 28;
     height: calc(var(--screem_width) / var(--arrow_size));
     width: calc(var(--screem_width) / var(--arrow_size) );
     transform-origin: right top;
@@ -75,12 +73,34 @@
 }
 
 #waiting_time {
-    min-height: calc(var(--screem_width) / var(--time_font_size) );
     justify-content: center;
     align-items: center;
     width: var(--screem_width);
-    background-color: rgba(80,80,80,50%);
+    background-color: rgba(40,40,40,70%);
     display: flex;
-    grid-area: time;
     height: calc(var(--screem_width) /10);
+}
+#waiting_inf {;
+    justify-content: center;
+    align-items: center;
+    width: var(--screem_width);
+    background-color: rgba(40,40,40,50%);
+    display: flex;
+    flex-flow: column;
+    height: calc(var(--screem_width) * 9 / 16 - var(--screem_width) /10);
+}
+
+.info_title{
+    font-size: calc(var(--screem_width) / var(--info_title_font_size) );
+}
+.info_text {
+    font-size: calc(var(--screem_width) / var(--info_text_font_size) );
+}
+.spacer_width20 {
+    height: calc(var(--screem_width) /20);
+}
+.info_text_pic {
+
+    vertical-align: middle;
+    height: calc(var(--screem_width) *1.5 / var(--info_text_font_size) );
 }

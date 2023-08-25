@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="animation.css">
     <link rel="stylesheet" href="screen.css">
+    <link rel="stylesheet" href="waiting.css">
     <script src="script/test.js" type="module"></script>
 </head>
 <body>
@@ -14,9 +15,29 @@
     <div id="screen_wrapper">
         <div id="virtual_screen_wrapper">
             <div id="background_picture">
-                <img id="background_picture_img" src="http://z-n-a-k.net/pic/PIC_SKY.jpg" style="object-fit: cover;width: 100%;height: 100%">
+                <img id="background_picture_img" src="http://z-n-a-k.net/pic/PIC_SKY.jpg" style="object-fit: cover;width: 100%;height: 100%" alt="">
             </div>
             <div id="text_wrapper">
+            </div>
+            <div id="waiting_wrapper" style="display: none;"> <!-- ぐりっど -->
+                <div id="waiting_inf">
+                    <div class="info_title">―分岐点に到着しました―</div>
+                    <div class="spacer_width20"></div>
+                    <div class="info_text">決定時刻までに<img src="pi/emb2.gif" class="info_text_pic" alt="六角形のマーク">を手で覆うことによって</div>
+                    <div class="info_text">対応する方へとストーリーが変化します</div>
+                    <div class="spacer_width20"></div>
+                    <div class="info_text">進行はあなた次第です</div>
+                </div>
+                <div id="waiting_time"><!-- うえのやつ -->
+                    <div>決定時刻 </div>
+                    <div id="waiting_time_connect">
+                        <div id="waiting_time_connect_line"></div>
+                        <div id="waiting_time_connect_arrow"></div>
+                    </div>
+                    <div id="waiting_time_display">
+                        11:20
+                    </div>
+                </div>
             </div>
         </div>
     </div>
