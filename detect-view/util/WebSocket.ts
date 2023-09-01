@@ -11,7 +11,7 @@ export function send(obj : Map<string,boolean>){
         return;
     }
     ws.send(JSON.stringify(Object.fromEntries(obj)));
-    console.log("send!")
+    console.log("send!");
 }
 
 export function changeWebSocketURL(IP :string, Port :string) {

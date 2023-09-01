@@ -1,6 +1,6 @@
 import {StoryScriptManager} from "./StoryScriptManager.js";
 
-import {request,getImages} from "./util/HTTPQuery.js";
+import {getImages} from "./util/HTTPQuery.js";
 import {FileManager} from "./FileManager.js";
 import {ScriptUpdater} from "./ScriptUpdater.js";
 
@@ -9,7 +9,7 @@ import {ScriptUpdater} from "./ScriptUpdater.js";
 
 
     let m :FileManager = new FileManager();
-    let s :StoryScriptManager = new StoryScriptManager();
+    let s :StoryScriptManager = new StoryScriptManager(m);
     let u = new ScriptUpdater(s,m);
 
     function init() {

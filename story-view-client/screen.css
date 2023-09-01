@@ -6,10 +6,13 @@
     justify-content: center;
 }
 
+.hide {
+    display: none;
+}
 
 .screen_text {
     color: white;
-    z-index: 2;
+    z-index: 3;
     /*-webkit-text-stroke: 1px black;*/
     text-shadow:
             2px  2px 1px #000000,

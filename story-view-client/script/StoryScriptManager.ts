@@ -1,14 +1,16 @@
 import {StoryScript} from "./StoryScript/StoryScript.js";
 import {LoadingPageScript} from "./StoryScript/LoadingPageScript.js";
+import {FileManager} from "./FileManager";
 
 
 export class StoryScriptManager {
 
     private Scripts_queue : Array<StoryScript>;
-
+    public fileManager :FileManager;
     private now_script :StoryScript|undefined = undefined;
 
-    constructor() {
+    constructor(file :FileManager) {
+        this.fileManager = file;
         this.Scripts_queue = new Array<StoryScript>();
     }
 
@@ -35,7 +37,7 @@ export class StoryScriptManager {
     }
 
     enableChangeScriptEvent() :void {
-        document.body.addEventListener("click",(ev)=>{
+        document.body.addEventListener("click",()=>{
             console.log("change")
             this.next_script();
             console.log("ev")

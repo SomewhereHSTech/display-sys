@@ -13,10 +13,10 @@ export function request(script_upd :ScriptUpdater){
 
 export function getImages(fileManager :FileManager){
     fetch(images_request_url).then((response) => response.json())
-        .then((data)=>{
+        .then((data :[{key :string, url :string}])=>{
             console.log(data)
             for (let item of data) {
-                fileManager.add(item,item);
+                fileManager.add(item.key,item.url);
             }
         })
 }

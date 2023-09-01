@@ -6,7 +6,7 @@
 
 #waiting_wrapper > * {
     color: white;
-    z-index: 2;
+    z-index: 4;
     /*-webkit-text-stroke: 1px black;*/
     text-shadow:
             2px  2px 1px #000000,

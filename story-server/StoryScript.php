@@ -35,12 +35,15 @@ class StoryScript {
 
 	public function getDataForDisplay() :array{
 		$result = array();
-		$result["left"] = [
-			"text" => $this->data["route"]["left_disp"]
-		];
-		$result["right"] = [
-			"text" => $this->data["route"]["right_disp"]
-		];
+		if ($this->data["type"] !== "ending") {
+			$result["left"] = [
+				"text" => $this->data["route"]["left_disp"]
+			];
+			$result["right"] = [
+				"text" => $this->data["route"]["right_disp"]
+			];
+		}
+		$result["type"] = $this->data["type"];
 		$result["update"] = $this->status->getNextRouteConfirm();
 		return $result;
 	}

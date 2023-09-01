@@ -1,0 +1,25 @@
+:root {
+    --effectwrapper_size: calc(40dvh)
+}
+
+
+#confirm_effect_wrapper {
+    position: absolute;
+    width: var(--wrapper_width);
+    height: var(--effectwrapper_size);
+    z-index: 1;
+    top: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #58c1fa;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.confirm_appear {
+    animation-name: appear;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    opacity: 1;
+}

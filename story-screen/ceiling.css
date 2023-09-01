@@ -1,0 +1,17 @@
+#ceiling_area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transform: rotateX(-45deg);
+    background-color: white;
+    width: 20vh;
+    height: 20vh;
+}
+
+.top_top_wrapper{
+    perspective: 10vw;
+    transform-style: preserve-3d;
+
+}

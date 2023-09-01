@@ -45,24 +45,21 @@ function changeDisplay(index :number){
     if (index >= Data_set.length){
         index = 0;
     }
-    document.getElementsByClassName("room_name")[0].appendChild(
-        addAppear(genInfoText(Data_set[index]["room_name"]))
+    document.getElementsByClassName("owner_name")[0].appendChild(
+        addAppear(genInfoText(Data_set[index]["owner_name"]))
     )
     document.getElementsByClassName("project_name")[0].appendChild(
         addAppear(genInfoText(Data_set[index]["project_name"]))
     )
     setTimeout(removeOld,495);
-    setTimeout(changeSelectedRoom,500,Data_set[index]["room_name"]);
-
+    setTimeout(changeSelectedRoom,500,"room"+Data_set[index]["room_name"]);
     setTimeout(changeDisplay,3000,index+1)
-
-
     return
 }
 
-function changeSelectedRoom(room_name : string) {
+function changeSelectedRoom(owner_name : string) {
     document.getElementsByClassName("map_selected")[0].classList.remove("map_selected");
-    document.getElementsByClassName(room_name)[0].classList.add("map_selected");
+    document.getElementsByClassName(owner_name)[0].classList.add("map_selected");
 }
 
 function removeOld() : void{

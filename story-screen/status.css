@@ -1,0 +1,22 @@
+.count_wrapper {
+    display: flex;
+    color: #58c1fa;
+}
+
+.count_wrapper > img {
+    width: 1vw;
+}
+
+.status_text_wrapper {
+    top: -20vh;
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.route_text {
+    color: #58c1fa;
+}
