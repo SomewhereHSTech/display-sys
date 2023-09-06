@@ -1,24 +1,44 @@
-const Data_set: ({ room_name: string; project_name: string }[]) = [
+const Data_set: ({ owner_name: string,room_name :string , project_name: string }[]) = [
     {
-        "room_name": "3-1",
-        "project_name" : "ああああああああああ"
+        "owner_name" : "1-1",
+        "room_name" : "1",
+        "project_name" : "企画名1"
     },
     {
-        "room_name": "3-2",
-        "project_name" : "いいいいいいいいいい"
+        "owner_name" : "1-2",
+        "room_name" : "2",
+        "project_name" : "企画名2"
     },
     {
-        "room_name": "3-3",
-        "project_name" : "うううううううううう"
+        "owner_name" : "1-3",
+        "room_name" : "3",
+        "project_name" : "企画名3"
     },
     {
-        "room_name": "3-4",
-        "project_name" : "ええええええええええ"
+        "owner_name" : "1-R",
+        "room_name" : "R",
+        "project_name" : "企画名4"
     },
     {
-        "room_name": "3-5",
-        "project_name" : "おおおおおおおおおお"
-    }
+        "owner_name" : "1-4",
+        "room_name" : "4",
+        "project_name" : "企画名5"
+    },
+    {
+        "owner_name" : "1-5",
+        "room_name" : "5",
+        "project_name" : "企画名6"
+    },
+    {
+        "owner_name" : "1-6",
+        "room_name" : "6",
+        "project_name" : "企画名7"
+    },
+    {
+        "owner_name" : "1-7",
+        "room_name" : "7",
+        "project_name" : "企画名8"
+    },
 ]
 
 
@@ -37,14 +57,20 @@ function addAppear(obj : HTMLSpanElement){
 
 
 function changeDisplay(index :number){
+    if (index >= Data_set.length){
+        index = 0;
+        // なんか入れるならここ
+    }
+    if (Data_set[index]["project_name"] == "") {
+        changeDisplay(index+1);
+        return;
+    }
+
     const before = document.getElementsByClassName("info_text");
     Array.prototype.forEach.call(before, function(item) {
         item.classList.add("disappear");
     });
     setTimeout(removeOld,740)
-    if (index >= Data_set.length){
-        index = 0;
-    }
     document.getElementsByClassName("owner_name")[0].appendChild(
         addAppear(genInfoText(Data_set[index]["owner_name"]))
     )

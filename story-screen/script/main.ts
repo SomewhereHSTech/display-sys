@@ -8,4 +8,5 @@ import {WebsocketManager} from "./WebSocket";
     iconInit(fileManager);
     let storyManager :StoryManager = new StoryManager(fileManager);
     let Websocket = new WebsocketManager(storyManager);
+    storyManager.start();
 })()

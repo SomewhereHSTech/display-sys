@@ -28,8 +28,8 @@ export class ScriptBuilder {
         if (obj["type"] == "img" && obj["url"] !== undefined) {
             return  new TextAndBackgroundScript(this.ScriptManager,obj["text"],obj["url"],this.fileManager);
         }
-        if (obj["type"] == "wait") {
-            return new WaitingPageScript(this.ScriptManager);
+        if (obj["type"] == "wait" && obj["update_time"] !== undefined) {
+            return new WaitingPageScript(this.ScriptManager,  obj["update_time"]);
         }
         if (obj["type"] == "chara" && obj["character_name"] !== undefined){
             return new CharacterTextScript(this.ScriptManager,obj["text"],obj["character_name"]);

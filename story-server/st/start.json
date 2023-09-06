@@ -1,0 +1,203 @@
+{
+  "scripts" : [
+    {
+      "type" : "img",
+      "url": "bg_1",
+      "text" : "発端は覚えていない。"
+    },
+    {
+      "type" : "text",
+      "text" : "気が付いたときには見渡す限りの平原に私はいた。"
+    },
+    {
+      "type" : "text",
+      "text" : "奇妙な青い空。どこまでも続くような平原。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "？？？",
+      "text" : "はじめましてだな。ペルシカリア。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア ",
+      "text" : "......？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "おっと、忘れていた。私はホオズキ。以後オミシリオキ。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "ちょっと待ってくれ。ペルシカリアとは何だ？そもそもここは――"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "まあそう慌てなさるな。ここじゃお互いを本当の名前では呼ばない。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "みんな名前が決まってる。お前の名前がペルシカリアになっただけだ。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "私がホオズキで、お前がペルシカリア。それ以上でもそれ以下でもない。簡単だろう？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "......"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "さて。お前は何しにここに来たんだ？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "何しに？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "ここにいる奴らはみんな目的があっているんだ。私は案内人ってワケよ。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "で、お前の目的は何だって話なワケ"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "知らないな。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "ほう、そりゃあ珍しい。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "じゃあ行こうじゃないか。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "どこへ？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "言ったろ？私は案内人。会った奴は案内しなきゃならない。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "......"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "さ、行こうぜ。ご丁寧に道が整備してあるんだ。"
+    },
+    {
+      "type" : "img",
+      "url": "bg_2",
+      "text" : ""
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "なんだこれは。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "しらないか。この辺ではアンテナの魚がよくいるんだ。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "テレビのアンテナのやつか？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "ご名答。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "頭が痛くなってきたぞ......"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "考えるだけ無駄ってやつよ。それより今楽しもうぜ？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "ほら、ここのアンテナの付け根を触ってやると喜ぶんだ。"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "......"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "かわいげが無いわけでもないな......"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "な？"
+    },
+    {
+      "type" : "img",
+      "url": "bg_3",
+      "text" : ""
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "さて、どっちに行きたい？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "決めてくれるんじゃないのか？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ホオズキ",
+      "text" : "管轄はここまでだ。だいたい、お前の決める事だろ？"
+    },
+    {
+      "type": "chara",
+      "character_name" : "ペルシカリア",
+      "text" : "そうなのか......"
+    },
+    {
+      "type" : "text",
+      "text" : "―左には丘、右には谷が見えます―"
+    }
+  ],
+  "type" : "",
+  "route" : {
+    "left" : "L",
+    "right" : "R",
+    "left_disp" : "左：丘",
+    "right_disp" : "右：谷"
+  }
+}

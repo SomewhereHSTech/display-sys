@@ -8,10 +8,14 @@ export class WaitingPageScript implements StoryScript {
 
     private element : HTMLDivElement;
     private ScriptManager: StoryScriptManager;
+    private upd_time :Date;
 
-    constructor(ScriptManager :StoryScriptManager) {
+    constructor(ScriptManager :StoryScriptManager,upd :number) {
         this.element = <HTMLDivElement>document.getElementById("waiting_wrapper");
         this.ScriptManager = ScriptManager;
+        this.upd_time = new Date(upd * 1000 + 1000*60*60*9);
+        (<HTMLDivElement>document.getElementById("waiting_time_display")).innerText
+            = `${this.upd_time.getHours()}:${this.upd_time.getMinutes()}`
     }
 
     appear(callback?: () => void): void {

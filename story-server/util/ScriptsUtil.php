@@ -4,7 +4,7 @@ require_once "FilePathManager.php";
 
 class ScriptsUtil {
 
-	public const initial_script_name = "";
+	public const initial_script_name = "start";
 
 	static public function resetStotyStats() :void{
 		$new = [

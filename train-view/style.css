@@ -27,14 +27,14 @@
 }
 
 .project_name {
-    width: 38vw;
+    width: 55vw;
     height: 21vw;
     background-color: black;
     font-size: 5vw;
 }
 
 .owner_name {
-    width: 24vw;
+    width: 18vw;
     height: 21vw;
     background-color: black;
     font-size: 7vw;

@@ -37,6 +37,10 @@ export class StoryManager {
             setTimeout(() => {
                 this.confirm();
             }, (data.update * 1000) - Date.now())
+        } else {
+            setTimeout(()=>{
+                this.start()
+            },1000*900);
         }
     }
 

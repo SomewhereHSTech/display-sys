@@ -12,6 +12,11 @@ class StoryScript {
 		$this->data = json_decode($raw_data,true);
 		$this->raw_data = $raw_data;
 		$this->status = $status;
+		$this->data[] = array(
+			"type" => "wait",
+			"text" => "",
+			"update_time" => $this->status->getNextRouteConfirm()+rand(1,5)
+		);
 	}
 
 	private function getHash(){
@@ -35,7 +40,7 @@ class StoryScript {
 
 	public function getDataForDisplay() :array{
 		$result = array();
-		if ($this->data["type"] !== "ending") {
+		if ($this->data["type"] !== "end") {
 			$result["left"] = [
 				"text" => $this->data["route"]["left_disp"]
 			];

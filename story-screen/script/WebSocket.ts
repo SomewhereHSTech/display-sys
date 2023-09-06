@@ -14,13 +14,9 @@ export class WebsocketManager {
     }
 
     connect(): void {
-        fetch(URLList.Websock_URL_get).then((result)=> {
-            result.text().then((text)=>{
-                this.ws = new WebSocket(text);
+                this.ws = new WebSocket("wss://ws.z-n-a-k.net");
                 this.ws.addEventListener("message",(event)=>{
                     this.StoryManager.onDetectData(JSON.parse(event.data));
-                })
-            })
         });
     }
 
