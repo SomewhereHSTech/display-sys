@@ -22,14 +22,14 @@
 
     </div>
   </div>
-  <div class="bottom_map">
+  <div class="bottom_map"><!-- ここからマップを描くためのあれこれ 四角ごとにdivを置いたから要素数が多い-->
     <div class="map_top">
       <div class="map_hall"></div>
       <div class="map_classroom_wrapper">
         <div class="map_classroom room1 map_selected"></div>
         <div class="map_classroom room2"></div>
         <div class="map_classroom room3"></div>
-        <div class="map_stair">
+        <div class="map_stair"> <!-- ここは階段の所　段ごとにdivを置いたので大変長い VSCodeとかで折りたたんどいて -->
           <div class="map_step_wrapper">
             <div class="map_step"></div>
             <div class="map_step"></div>
@@ -59,6 +59,6 @@
     </div>
   </div>
 </div>
-<script src="main.js"></script>
+<script src="main.js"></script><!-- window.addEventListener("load",hoge)すればscriptタグはここに書く必要ないらしい -->
 </body>
 </html>

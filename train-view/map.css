@@ -1,3 +1,9 @@
+/*
+map.css
+下のマップのスタイル指定するマン
+
+正直いちいちコメント入れるよりChromeの開発者ツール（F12 or Ctrl+shift+I）で見た方がわかりやすい
+*/
 .bottom_map {
     display: flex;
     align-items: center;
